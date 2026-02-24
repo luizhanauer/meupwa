@@ -35,15 +35,17 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Ignora métodos que não sejam GET
   if (event.request.method !== 'GET') return;
 
+  // Proteção contra esquemas não suportados (ex: chrome-extension://)
   if (!event.request.url.startsWith('http')) return;
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request).then((networkResponse) => {
-       if (networkResponse.ok) {
-          // CORREÇÃO: Clona a resposta imediatamente, antes de operações assíncronas
+        if (networkResponse.ok) {
+          // Clona a resposta imediatamente antes que a stream seja consumida pelo browser
           const responseToCache = networkResponse.clone();
           
           caches.open(CACHE_NAME).then((cache) => {
