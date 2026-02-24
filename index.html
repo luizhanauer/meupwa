@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu App Progressivo</title>
+  <meta name="description" content="Uma descrição incrível do meu aplicativo.">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff0000">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-touch-icon" href="icons/icon-192.png">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #000000;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 1rem;
+    }
+    .badge {
+      background-color: #ff0000;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>MeuPWA</h1>
+  <p>O seu Progressive Web App foi gerado com sucesso!</p>
+  <div class="badge">Pronto para Instalar</div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then((registration) => {
+            console.log('✅ ServiceWorker registado com sucesso! Scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('❌ Falha ao registar o ServiceWorker:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

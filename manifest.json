@@ -1,0 +1,52 @@
+{
+  "name": "Meu App Progressivo",
+  "short_name": "MeuPWA",
+  "description": "Uma descrição incrível do meu aplicativo.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff0000",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot-desktop.png",
+      "sizes": "1000x600",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Aplicação no Computador"
+    },
+    {
+      "src": "screenshots/screenshot-mobile.png",
+      "sizes": "600x1000",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Aplicação no Telemóvel"
+    }
+  ]
+}
